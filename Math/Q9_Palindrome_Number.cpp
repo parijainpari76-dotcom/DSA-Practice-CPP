@@ -1,0 +1,29 @@
+// LeetCode 9 - Palindrome Number
+// Topic: Math
+// Difficulty: Easy
+// Time Complexity: O(log10(n))
+// Space Complexity: O(1)
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        
+        if(x<0)
+        return 0;
+
+        int ans = 0, rem ,num = x;
+        while(num)
+        {
+            rem = num%10;
+            num/=10;
+            if(ans>INT_MAX/10)
+            return 0;
+            ans = ans *10 +rem;
+        };
+
+        if(ans == x)
+        return 1;
+        else
+        return 0;
+        
+    }
+};
